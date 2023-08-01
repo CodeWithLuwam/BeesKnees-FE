@@ -1,0 +1,28 @@
+#exercises-container {
+    display: flex;
+    background-color: #010203;
+    height: 95vw;
+    /* width:100vw ;  */
+    justify-content: space-between;
+    padding:60px;
+    flex-wrap: wrap;
+}
+
+#exercise-box {
+    display:flex;
+    color: rgb(8, 8, 8);
+    background-color: rgb(139, 108, 22);
+    height: 100px;
+    width: 100px;
+    border-radius: 25%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+
+    
+
+}
+
