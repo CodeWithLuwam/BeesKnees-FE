@@ -1,7 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 import './App.css';
-import { useState } from "react";
-import Exercise from "./components/Exercise";
+// import { useState } from "react";
+// import Exercise from "./components/Exercise";
+import NaviBar from "./components/NaviBar";
 
 
 const baseURL = "https://beesknees-be.onrender.com";
@@ -9,7 +10,8 @@ const baseURL = "https://beesknees-be.onrender.com";
 const App = () => {
   return (
     <div>
-      <Exercise baseURL={baseURL}/>
+      <NaviBar  baseURL={baseURL}/>
+      {/* <Exercise baseURL={baseURL}/> */}
     </div>
   );
 }
