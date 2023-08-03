@@ -20,8 +20,6 @@ const NaviBar = ({baseURL}) => {
         <Route
           path="/exercises"
           element={<ExercisesList baseURL={baseURL}></ExercisesList>}/></Routes>
-        
-    
     </Router>
   );
 };

@@ -5,7 +5,8 @@ import './App.css';
 import NaviBar from "./components/NaviBar";
 
 
-const baseURL = "https://beesknees-be.onrender.com";
+// const baseURL = "https://beesknees-be.onrender.com";
+const baseURL = "https://beesknees-4h5l.onrender.com/";
 
 const App = () => {
   return (
