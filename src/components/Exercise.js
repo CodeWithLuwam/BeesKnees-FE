@@ -1,20 +1,24 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import '../style/Exercise.css';
+import { useLocation } from 'react-router-dom';
 
 
-const Exercise = ({baseURL}) => {
+const Exercise = ({baseURL, id}) => {
+  const location = useLocation()
+  const { from } = location.state
+  // console.log(baseURL, location.state, from);
   const [ exerciseName, setExerciseName ] = useState("Name")
   const [ exerciseDescription, setExerciseDescription ] = useState("Description")
   const [ exerciseImage, setExerciseImage ] = useState("https://images.unsplash.com/photo-1690535707954-597ff9dbcdc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=447&q=80")
   // const [ exerciseImage, setExerciseImage ] = useState("https://res.cloudinary.com/dvbdefnwx/image/upload/v1677474681/Moratia%20Images/IMG_4092_rabhmw.png")
   const getOneExercise =() => {
     axios
-    .get(`${baseURL}/exercises/`)
+    .get(`${baseURL}exercises/${from}`)
     .then((response) => {
       // Code that executes with a successful response goes here
-      // console.log(response.data[0])
-      const exerciseData = response.data[0]
+      console.log(response)
+      const exerciseData = response.data
       console.log(exerciseData.name)
       setExerciseName(exerciseData.name)
       setExerciseDescription(exerciseData.description)
@@ -25,12 +29,15 @@ const Exercise = ({baseURL}) => {
       // Code that executes with an unsuccessful response goes here
     });    
   }
+  useEffect(()=>getOneExercise(),[])
+
   return (
-    <div>
-    <button onClick={getOneExercise}>get One Exercise</button>
-    <h1>{exerciseName}</h1>
-    <h2>{exerciseDescription}</h2>
-    <img src={exerciseImage} alt="img" height="450" />
+    <div id="exercises-container">
+    {/* <button onClick={getOneExercise}>get One Exercise</button> */}
+    <button id= "button" onClick={getOneExercise}>Exercise</button>
+    <h1 id="exercise-name">{exerciseName}</h1>
+    <h2 id="exercise-description">{exerciseDescription}</h2>
+    <img id="exercise-image"src={exerciseImage} alt="img" height="450" />
     {/* <h2>{exerciseImage}</h2> */}
 
     </div>
