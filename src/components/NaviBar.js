@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import Exercise from './Exercise';
+import Exercise from './Exercise';
 import ExercisesList from './ExercisesList';
 
 const NaviBar = ({baseURL}) => {
@@ -19,7 +19,10 @@ const NaviBar = ({baseURL}) => {
       <Routes>
         <Route
           path="/exercises"
-          element={<ExercisesList baseURL={baseURL}></ExercisesList>}/></Routes>
+          element={<ExercisesList baseURL={baseURL}></ExercisesList>}/>
+          <Route path="exercises/:id" element={<Exercise baseURL={baseURL}/>} />
+          </Routes>
+
     </Router>
   );
 };

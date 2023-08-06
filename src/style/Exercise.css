@@ -1,0 +1,70 @@
+#exercise-image {
+    display:flex;
+    color: rgb(8, 8, 8);
+    background-color: rgb(139, 108, 22);
+    height: 600px;
+    width: 600px;
+    border-radius: 25%;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+#exercise-description{
+    display:flex;
+    color: rgb(8, 8, 8);
+    background-color: rgb(139, 108, 22);
+    height: 100px;
+    width: 100px;
+    border-radius: 25%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+    grid-row: 2;
+    grid-column: 2/10;
+    display: grid;
+}
+#exercise-name{
+    display:flex;
+    color: rgb(8, 8, 8);
+    background-color: rgb(139, 108, 22);
+    height: 100px;
+    width: 100px;
+    border-radius: 25%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 1/10;
+    display: grid; 
+    height: 5%;
+    
+
+
+}
+
+# exercises-container {
+    display: flex;
+    background-color: #010203;
+    height: 95vw;
+    /* width:100vw ;  */
+    justify-content: space-between;
+    padding:70px;
+    flex-wrap: wrap;
+    
+}
+
+#button {
+    height: 60px;
+    width: 60px;
+}
