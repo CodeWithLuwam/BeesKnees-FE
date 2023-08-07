@@ -5,25 +5,39 @@
     height: 100px;
     width: 100px;
     border-radius: 25%;
-    padding: 30px;
+    padding: 60px;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: bolder;
     font-size: x-large;
-
-
+    margin-right: 80px; 
 }
 
 #exercises-container {
     display: flex;
-    background-color: #010203;
-    height: 95vw;
-    /* width:100vw ;  */
-    justify-content: space-between;
-    padding:60px;
-    flex-wrap: wrap;
+    /* width: 1000px; */
+    height: 50vw; 
+    margin: auto;
+    justify-content: space-around;
+    padding:20px;
+    flex-wrap: wrap; 
 }
 
+#container{
+    background-color: #010203;
+    width:100vw;
+}
 
+#title {
+    font-weight: bolder;
+    /* font-size: x-large; */
+    color: rgb(139, 108, 22);
+    background-color:rgb(8, 8, 8);
+    margin:0;
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 
+}

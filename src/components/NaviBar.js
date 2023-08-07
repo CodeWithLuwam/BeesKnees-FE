@@ -20,8 +20,8 @@ const NaviBar = ({baseURL}) => {
         <Route
           path="/exercises"
           element={<ExercisesList baseURL={baseURL}></ExercisesList>}/>
-          <Route path="exercises/:id" element={<Exercise baseURL={baseURL}/>} />
-          </Routes>
+        <Route path="exercises/:id" element={<Exercise baseURL={baseURL}/>} />
+      </Routes>
 
     </Router>
   );

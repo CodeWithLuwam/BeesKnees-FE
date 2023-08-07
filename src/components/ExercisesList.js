@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState , useEffect} from "react";
 import "../style/ExercisesList.css"
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const ExercisesList = ( {baseURL}) => {
@@ -32,19 +32,23 @@ const ExercisesList = ( {baseURL}) => {
     });    
   }
 
-  
-
   useEffect(()=>getAllExercises(),[])
   const displayExercises = () => {
     return exercisesData.map((exercise, index )=>(
-      // <Link to="/onboarding/profile" state={{ from: "occupation" }}>
-    <Link to={`/exercises/${exercise.id}`}  state={{ from: `${exercise.id}` }} key={index} >
-    <div id="exercise-box" >{exercise.name}</div> </Link>
+    <Link to={`/exercises/${exercise.id}`}  state={{ from: `${exercise.id}` }} key={index} id="exercise-box" >
+    {exercise.name} </Link>
     ))
   }
   return <>
   {/* <button onClick={getAllExercises}>Get All Exercises</button> */}
+  <div>
+    <div id="title"> <h1> Click on exercise for description</h1></div>
+
+  <div id="container">
   <div id="exercises-container">{displayExercises()} </div>
+  
+  </div>
+  </div>
   </>;
 };
 
