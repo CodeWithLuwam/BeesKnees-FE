@@ -53,10 +53,10 @@
 }
 
 #exercises-container {
-    /* display: flex; */
+    display: flex;
     background-color: #010203;
     height: 100vw;
-    width:100vw ; 
+    /* width:100vw ;  */
     /* justify-content: space-around; */
     padding:50%;
     flex-wrap: wrap;
