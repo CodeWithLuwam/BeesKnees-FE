@@ -3,7 +3,7 @@
     color: rgb(8, 8, 8);
     background-color: rgb(139, 108, 22);
     height: 600px;
-    width: 600px;
+    width: 500px;
     border-radius: 25%;
     padding: 30px; 
     /* align-items: center; */
@@ -31,9 +31,6 @@
     /* display: grid; */
 }
 #exercise-name{
-    /* display:flex; */
-    /* color: rgb(8, 8, 8); */
-    /* background-color: rgb(139, 108, 22); */
     color:rgb(139, 108, 22);
     height: 100px;
     width: 600px;
@@ -44,12 +41,15 @@
     text-align: center;
     font-weight: bolder;
     font-size: 100px;
+    margin: auto;
     /* flex-direction: column; */
     /* grid-row: 1; */
     /* grid-column: 1/10; */
     /* display: grid;  */
     /* height: 5%; */
-    margin: auto;
+    /* display:flex; */
+    /* color: rgb(8, 8, 8); */
+    /* background-color: rgb(139, 108, 22); */
 }
 
 #exercises-container {
@@ -70,5 +70,5 @@
 
 #name {
     background-color: #010203;  
-    width:100vw; 
+    /* width:100vw;  */
 }

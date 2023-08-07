@@ -42,7 +42,7 @@ const ExercisesList = ( {baseURL}) => {
   return <>
   {/* <button onClick={getAllExercises}>Get All Exercises</button> */}
   <div>
-    <div id="title"> <h1> Click on exercise for description</h1></div>
+    <div id="title"> <h1> Click on Exercise for Instructions</h1></div>
 
   <div id="container">
   <div id="exercises-container">{displayExercises()} </div>

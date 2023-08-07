@@ -2,15 +2,15 @@
     display:flex;
     color: rgb(8, 8, 8);
     background-color: rgb(139, 108, 22);
-    height: 100px;
-    width: 100px;
+    height: 11vw;
+    width: 11vw;
     border-radius: 25%;
     padding: 60px;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: bolder;
-    font-size: x-large;
+    font-size: 40px;
     margin-right: 80px; 
 }
 
@@ -26,7 +26,8 @@
 
 #container{
     background-color: #010203;
-    width:100vw;
+    /* width:100vw; */
+    display: flex;
 }
 
 #title {

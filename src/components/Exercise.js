@@ -41,7 +41,7 @@ const Exercise = ({baseURL}) => {
     {/* <Link to={"/exercises/"}   key={index} > </Link> */}
     {/* <button id= "button" onClick={getOneExercise}>Exercise</button> */}
     <h2 id="exercise-description">{exerciseDescription}</h2>
-    <img id="exercise-image"src={exerciseImage} alt="img" height="450" />
+    <img id="exercise-image"src={exerciseImage} alt="" height="450" />
     {/* <h2>{exerciseImage}</h2> */}
 
     </div>
