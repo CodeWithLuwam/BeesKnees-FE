@@ -1,37 +1,36 @@
-import axios from "axios";
 import { useState , useEffect} from "react";
 import "../style/ExercisesList.css"
 import { Link } from "react-router-dom";
 import NaviBar from "./NaviBar";
 
 
-const ExercisesList = ( {baseURL}) => {
+const ExercisesList = ( {exercisesData, getAllExercises}) => {
   // const location = useLocation();
   // console.log(location)
-  const [exercisesData, setExercisesData] = useState([])
+  // const [exercisesData, setExercisesData] = useState([])
 
 
-  const getAllExercises =() => {
-    axios
-    .get(`${baseURL}exercises/`)
-    .then((response) => {
-      // Code that executes with a successful response goes here
-      // console.log(response)
-      const newData=response.data.map((exercise)=>{
-        return {
-          id:exercise.id,
-          name:exercise.name,
-          description:exercise.description,
-          image: exercise.image
-        }
-      })
-      setExercisesData(newData)
-      // console.log(exercisesData)
-    })
-    .catch((error) => {
-      // Code that executes with an unsuccessful response goes here
-    });    
-  }
+  // const getAllExercises =() => {
+  //   axios
+  //   .get(`${baseURL}exercises/`)
+  //   .then((response) => {
+  //     // Code that executes with a successful response goes here
+  //     // console.log(response)
+  //     const newData=response.data.map((exercise)=>{
+  //       return {
+  //         id:exercise.id,
+  //         name:exercise.name,
+  //         description:exercise.description,
+  //         image: exercise.image
+  //       }
+  //     })
+  //     setExercisesData(newData)
+  //     // console.log(exercisesData)
+  //   })
+  //   .catch((error) => {
+  //     // Code that executes with an unsuccessful response goes here
+  //   });    
+  // }
 
   useEffect(()=>getAllExercises(),[])
   const displayExercises = () => {
@@ -44,7 +43,7 @@ const ExercisesList = ( {baseURL}) => {
   {/* <button onClick={getAllExercises}>Get All Exercises</button> */}
   <div>
   <NaviBar/>
-    <div id="title"> <h1> Click on Exercise for Instructions</h1></div>
+    <div id="title"> <div className="glow"> Click on Exercise for Instructions</div></div>
 
   <div id="container">
   <div id="exercises-container">{displayExercises()} </div>
