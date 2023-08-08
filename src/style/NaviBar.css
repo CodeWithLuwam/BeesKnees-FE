@@ -1,0 +1,16 @@
+#home-page {
+    display:block;
+    padding: 10px;
+    color: white;
+    font-size:2vw;
+    font-weight: bolder;
+    text-align: right;
+}
+
+#exercises {
+    padding: 10px;
+    color: white;
+    font-size: 2vw;;
+    font-weight: bolder;
+}
+

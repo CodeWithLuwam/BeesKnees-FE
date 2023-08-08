@@ -34,7 +34,8 @@
     font-weight: bolder;
     /* font-size: x-large; */
     color: rgb(139, 108, 22);
-    background-color:rgb(8, 8, 8);
+    /* background-color:rgb(8, 8, 8); */
+    background-color: #010203;
     margin:0;
     text-align: center;
     font-size: 50px;

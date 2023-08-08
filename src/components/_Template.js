@@ -1,7 +1,7 @@
-import "../style/_Template.css";
+// import "../style/_Template.css";
 
-const Template = () => {
-  return <></>;
-};
+// const Template = () => {
+//   return <></>;
+// };
 
-export default Template;
+// export default Template;
