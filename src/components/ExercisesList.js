@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState , useEffect} from "react";
 import "../style/ExercisesList.css"
 import { Link } from "react-router-dom";
+import NaviBar from "./NaviBar";
 
 
 const ExercisesList = ( {baseURL}) => {
@@ -42,6 +43,7 @@ const ExercisesList = ( {baseURL}) => {
   return <>
   {/* <button onClick={getAllExercises}>Get All Exercises</button> */}
   <div>
+  <NaviBar/>
     <div id="title"> <h1> Click on Exercise for Instructions</h1></div>
 
   <div id="container">

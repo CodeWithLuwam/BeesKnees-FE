@@ -1,0 +1,56 @@
+#beesknees {
+    text-align: center;
+    /* color: rgb(139, 108, 22); */
+    color: white;
+    background-color: #010203; 
+    font-size: 10vw;
+    padding-bottom: 5px;
+    margin: auto;
+    padding-top: 80px;
+}
+
+#center-info {
+    /* display: block; */
+    background-color: #010203; 
+    color:rgb(139, 108, 22) ;
+    font-size: 3vw;
+    font-weight: bolder;
+    text-align: center;   
+}
+#bottom-info {
+    text-align: left;
+    font-size: 1vw;
+    padding-top: 200px;
+}
+
+#line4 {
+    color: white;
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+#line5 {
+    inline-size: 1300px;
+    overflow-wrap: break-word;
+}
+
+.line5-cont{
+    color:rgb(139, 108, 22);
+    text-decoration: underline;
+    text-underline-offset: auto;
+    padding-bottom: 10px;
+}
+
+#line6 {
+    color: white;
+    inline-size: 1300px;
+    overflow-wrap: break-word;
+}
+
+.line6-cont {
+    text-decoration: underline;
+    text-underline-offset: auto
+}
+
+* {background-color: black}
+
