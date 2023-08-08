@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "rea
 import ExercisesList from './components/ExercisesList';
 import Home from './components/Home';
 import { StrictMode } from 'react';
+import Tracker from './components/Tracker';
 
 
 
@@ -26,6 +27,7 @@ const App = () => {
                 <Route path="/" element={<Home baseURL={baseURL}/>}  />
                 <Route path="exercises"element={<ExercisesList baseURL={baseURL}/>} />
                 <Route path="exercises/:id" element={<Exercise baseURL={baseURL}/>} />
+                <Route path="/tracker" element={<Tracker baseURL={baseURL}/>} />
             </Routes>
           </div>
       {/* </BrowserRouter> */}
