@@ -15,6 +15,7 @@ const NaviBar = () => {
             {/* <Nav.Link as={Link} to={"/home"}>Home</Nav.Link>
             <Nav.Link as={Link} to={"/exercises"}>Exercises</Nav.Link> */}
             {/* <Icon icon="mdi:bee" color="gold" width="100" height="100" /> */}
+            
             <Link to="/" id="home-page"> Home </Link> 
             <Link to="/exercises" id="exercises">Exercises</Link>
             <Link to="/tracker" id="tracker">Tracker</Link>

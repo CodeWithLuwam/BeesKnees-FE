@@ -8,6 +8,7 @@
     transition-duration: 0.4s;
     display: inline-block;
     margin: 8px;
+    /* border-radius: 12px; */
     
     
 }
@@ -46,6 +47,5 @@
     background-color: rgb(139, 108, 22); /* Green */
     color: white;
 }
-
 
 
