@@ -1,4 +1,26 @@
-#traker-table {
-    background-color: white;
+.traker-table, .traker-table2 {
     color: white;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.traker-table {
+    background-color: rgb(139, 108, 22);
+}
+
+.traker-table2 {
+    background-color: rgb(255, 255, 255);
+}
+
+.input-text{
+    width: 100px;
+    /* padding: 2px; */
+}
+
+input {
+    width: 95%;
+    font-weight: bolder;
+    border: none;
+    color: white;
+
 }

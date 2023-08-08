@@ -5,42 +5,170 @@ import Table from 'react-bootstrap/Table';
 
 
 
-const Tracker = () => {
+const Tracker = ({exercisesData, getAllExercises}) => {
   
+  const exerciseInfo = () => {
+    return exercisesData.map((exerciceData, index) => (
+      
+      <tr
+        key={index}
+      >
+        <td>{exerciceData.name}</td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+        <td className="input-text"><input type="text" ></input></td>
+      </tr>
+    ));
+  };
+
   return <>
   <NaviBar/>
-    <Table id="traker-table" striped bordered hover variant="light">
+    <Table className="traker-table" striped bordered hover variant="light">
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Movement</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {exerciseInfo()}
       </tbody>
     </Table>
-  
-  
-  
+
+    <Table className="traker-table2" striped bordered hover variant="light">
+      <thead>
+        <tr>
+          <th>Movement</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+        </tr>
+      </thead>
+      <tbody>
+        {exerciseInfo()}
+      </tbody>
+    </Table>
+
+    <Table className="traker-table" striped bordered hover variant="light">
+      <thead>
+        <tr>
+          <th>Movement</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+        </tr>
+      </thead>
+      <tbody>
+        {exerciseInfo()}
+      </tbody>
+    </Table>
+    <Table className="traker-table2" striped bordered hover variant="light">
+      <thead>
+        <tr>
+          <th>Movement</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+        </tr>
+      </thead>
+      <tbody>
+        {exerciseInfo()}
+      </tbody>
+    </Table>
+
+
 
 </>;
 };

@@ -51,7 +51,7 @@ const App = () => {
                 <Route path="/" element={<Home baseURL={baseURL}/>}  />
                 <Route path="exercises"element={<ExercisesList exercisesData={exercisesData} getAllExercises={getAllExercises} />} />
                 <Route path="exercises/:id" element={<Exercise baseURL={baseURL}/>} />
-                <Route path="/tracker" element={<Tracker baseURL={baseURL}/>} />
+                <Route path="/tracker" element={<Tracker exercisesData={exercisesData} getAllExercises={getAllExercises}/>} />
             </Routes>
           </div>
       {/* </BrowserRouter> */}
