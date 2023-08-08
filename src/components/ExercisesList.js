@@ -43,7 +43,7 @@ const ExercisesList = ( {exercisesData, getAllExercises}) => {
   {/* <button onClick={getAllExercises}>Get All Exercises</button> */}
   <div>
   <NaviBar/>
-    <div id="title"> <h1> Click on Exercise for Instructions</h1></div>
+    <div id="title"> <div className="glow"> Click on Exercise for Instructions</div></div>
 
   <div id="container">
   <div id="exercises-container">{displayExercises()} </div>

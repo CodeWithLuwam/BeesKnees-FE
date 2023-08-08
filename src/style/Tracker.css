@@ -1,7 +1,7 @@
 .traker-table, .traker-table2 {
     color: white;
-    padding: 15px;
-    margin-top: 25px;
+    padding: 6px;
+    margin: 25px;
 }
 
 .traker-table {
@@ -9,7 +9,8 @@
 }
 
 .traker-table2 {
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+    background-color: silver;
 }
 
 .input-text{
