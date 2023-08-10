@@ -8,14 +8,23 @@ import ExercisesList from './components/ExercisesList';
 import Home from './components/Home';
 import { StrictMode } from 'react';
 import Tracker from './components/Tracker';
+import History from './components/History';
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
-// const baseURL = "https://beesknees-be.onrender.com";
-const baseURL = "https://beesknees-4h5l.onrender.com/";
+// const baseURL = "https://beesknees-4h5l.onrender.com/";
+const baseURL = "http://localhost:8000/";
 
 const App = () => {
   const [exercisesData, setExercisesData] = useState([])
+
+  // const [currentForm, setCurrentForm] = useState('login');
+  // const toggleForm = (formName) => {
+  //   setCurrentForm(formName);
+  // }
 
   const getAllExercises =() => {
     axios
@@ -43,6 +52,10 @@ const App = () => {
     <StrictMode>
       {/* <BrowserRouter> */}
         <div>
+          {/* {
+            currentForm === "login" ?  <Login onFormSwitch={toggleForm}/> : <Signup onFormSwitch={toggleForm}/>
+          } */}
+        
           {/* <Exercise baseURL={baseURL}/> */}
           {/* <NaviBar /> */}
             <Routes>
@@ -52,7 +65,12 @@ const App = () => {
                 <Route path="exercises"element={<ExercisesList exercisesData={exercisesData} getAllExercises={getAllExercises} />} />
                 <Route path="exercises/:id" element={<Exercise baseURL={baseURL}/>} />
                 <Route path="/tracker" element={<Tracker exercisesData={exercisesData} getAllExercises={getAllExercises}/>} />
+                <Route path="/history" element={<History baseURL={baseURL}/>} />
+                {/* <Route path="/" element={<Login />}></Route> 
+                <Route path="/signup" element={<Signup />}></Route>  */}
             </Routes>
+            <div>
+          </div>
           </div>
       {/* </BrowserRouter> */}
     </StrictMode>
