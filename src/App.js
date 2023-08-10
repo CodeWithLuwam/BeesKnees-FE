@@ -11,19 +11,17 @@ import History from './components/History';
 
 
 
-// const baseURL = "https://beesknees-4h5l.onrender.com/";
-const baseURL = "http://localhost:8000/";
+const baseURL = "https://beesknees-4h5l.onrender.com/";
+// const baseURL = "http://localhost:8000/";
 
 const App = () => {
   const [exercisesData, setExercisesData] = useState([])
-  // const [currentUser, setCurrentUser] = useState([])
   const [ email, setEmail] = useState ('');
   const [ password, setPassword] = useState('');
   const [name, setName] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email);
   }
 
 
