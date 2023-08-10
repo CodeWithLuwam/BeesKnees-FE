@@ -13,7 +13,7 @@ const History = ({ baseURL, email }) => {
   useEffect(() => {
     const getUserEntries = () => {
       axios
-        .get(`${baseURL}user/`)
+        .get(`${baseURL}users/`)
         .then((response) => {
           const newUserData = response.data.map((user) => ({
             id: user.id,
