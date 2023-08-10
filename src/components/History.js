@@ -5,7 +5,7 @@ import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 
-const History = ({ baseURL }) => {
+const History = ({ baseURL, email }) => {
   const [userData, setUserData] = useState([]);
   const [exerciseData, setExerciseData] = useState([]);
 
