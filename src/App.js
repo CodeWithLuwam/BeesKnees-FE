@@ -22,6 +22,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // console.log(`HOME - Email: ${email}`);
   }
 
 

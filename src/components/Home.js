@@ -43,12 +43,13 @@ const Home = ({
             THIS IS NOT MEANT TO REPLACE THE ADVICE OF QUALIFIED MEDICAL
             <div className="line6-cont">
               PRACTITIONER BUT A GUIDE TO MONITOR YOUR PROGRESS
-            </div>{" "}
+            </div>
           </div>
         </div>
       </div>
       {currentForm === "login" ? (
         <Login
+        id="login"
           onFormSwitch={toggleForm}
           email={email}
           setEmail={setEmail}
