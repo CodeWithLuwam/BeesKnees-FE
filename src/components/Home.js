@@ -18,11 +18,13 @@ const Home = ({
   const toggleForm = (formName) => {
     setCurrentForm(formName);
   };
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
-      <NaviBar />
-
+      <NaviBar show={show} setShow={setShow} handleShow={handleShow} />
       <h1 id="beesknees"> Bee's Knees</h1>
 
       <div id="center-info">
@@ -47,15 +49,20 @@ const Home = ({
           </div>
         </div>
       </div>
+
       {currentForm === "login" ? (
         <Login
-        id="login"
+          id="login"
           onFormSwitch={toggleForm}
           email={email}
           setEmail={setEmail}
           password={password}
           setPassword={setPassword}
           handleSubmit={handleSubmit}
+          show={show}
+          setShow={setShow}
+          handleShow={handleShow}
+          handleClose={handleClose}
         />
       ) : (
         <Signup
@@ -67,6 +74,10 @@ const Home = ({
           name={name}
           setName={setName}
           handleSubmit={handleSubmit}
+          show={show}
+          setShow={setShow}
+          handleShow={handleShow}
+          handleClose={handleClose}
         />
       )}
     </div>

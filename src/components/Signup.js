@@ -10,6 +10,11 @@ const Signup = ({
   name,
   setName,
   handleSubmit,
+  show,
+  setShow,
+  handleClose,
+  handleShow
+
 }) => {
   return (
     <div className="auth-form-container">
