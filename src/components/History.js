@@ -1,8 +1,9 @@
 // import "../style/_History.css";
 import NaviBar from "./NaviBar";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
+import Table from "react-bootstrap/Table";
 
 const History = ({ baseURL }) => {
   const [userData, setUserData] = useState([]);
@@ -18,7 +19,7 @@ const History = ({ baseURL }) => {
         console.log(error);
       });
   };
-  
+
   const getUserEntries = () => {
     axios
       .get(`${baseURL}user/`)
@@ -33,55 +34,49 @@ const History = ({ baseURL }) => {
       })
 
       .catch((error) => {
-        console.log(error)
+        console.log(error);
       });
   };
 
-  useEffect(()=>{getUserEntries(); getExerciseData();},[])
-  
+  useEffect(() => {
+    getUserEntries();
+    getExerciseData();
+  }, []);
+
   const exerciseMap = {}; // Creating a mapping dictionary
   exerciseData.forEach((exercise) => {
     exerciseMap[exercise.id] = exercise.name;
   });
 
   const displayUserEntries = () => {
-    return userData.map((user, index )=>(   
-
-      // <div key={index}>
-      //   {user.name}
-      //   {/* {user.entries[0].date} */}
-      //   {user.entries.length > 0 && <div>{user.entries[0].date}</div>}
-      // </div>
-
-      <div key={user.id}>
-      <div>{user.name}</div>
-      {user.entries.map((entry) => (
-        <div key={entry.id}>
-          <div>Date: {entry.date}</div>
-          <div>Sets: {entry.sets}</div>
-          <div>Reps or Minutes: {entry.reps_or_mins}</div>
-          <div>Exercise: {exerciseMap[entry.exercise]}</div>
-        </div>
-      ))}
-    </div>
-    ))
-  }
+    return userData.map((user, index) => (
+      <React.Fragment key={index}>
+        <tr>
+          <th>Exercise</th>
+          <th>Date</th>
+          <th>Sets</th>
+          <th>Reps/Mins</th>
+        </tr>
+        {user.entries.map((entry) => (
+          <tr key={entry.id}>
+            <td className="input-text">{exerciseMap[entry.exercise]}</td>
+            <td className="input-text">{entry.date}</td>
+            <td className="input-text">{entry.sets}</td>
+            <td className="input-text">{entry.reps_or_mins}</td>
+          </tr>
+        ))}
+      </React.Fragment>
+    ));
+  };
 
   return (
     <>
       <NaviBar />
       <div>
-      <div id="title">Your History</div>
-
-          <div >{displayUserEntries()} </div>
-
-        {/* {userData.map((user) => (
-        <div key={user.id}>
-          <div className="user-name">NAME{user.name}</div>
-          <div>ENTRIES{user.entries}</div>
-        </div>
-        
-      ))} */}
+        <div id="title">Your History</div>
+        <Table className="traker-table" striped bordered hover variant="light">
+          <tbody>{displayUserEntries()}</tbody>
+        </Table>
       </div>
     </>
   );

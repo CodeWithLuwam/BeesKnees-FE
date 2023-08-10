@@ -20,6 +20,7 @@ const baseURL = "http://localhost:8000/";
 
 const App = () => {
   const [exercisesData, setExercisesData] = useState([])
+  const [currentUser, setCurrentUser] = useState([])
 
   // const [currentForm, setCurrentForm] = useState('login');
   // const toggleForm = (formName) => {
