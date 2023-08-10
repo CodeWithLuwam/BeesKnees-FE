@@ -1,0 +1,59 @@
+.auth-form-containe, .signup-form{
+    display:flex;
+    flex-direction: column;
+    min-height: 50vh;
+    align-items:center;
+    justify-content: center;
+    margin-left: 35%;
+    margin-top: 5%;
+    font-size: large;
+    opacity: 0.5
+}
+
+.signup-form, #login-button {
+    color: white;
+    background-color: rgb(139, 108, 22);
+    width: 30%;
+}
+
+.signup-form{
+    height:30%;
+    margin-left:35%;
+}
+.login-input {
+    width: 30%;
+    border-style: solid;
+
+}
+
+#switch{
+    color:white;
+    margin-left: 42.5%;
+    margin-bottom: 20%;
+    font-size: large;
+}
+
+.signup-form{
+    margin-left: 30%;
+    filter: grayscale(60%);
+
+}
+
+#log-in-button {
+    color: white
+}
+
+#email {
+    text-align: center;
+    margin-left: 10%;
+    width:30% ; 
+    border-style: solid;
+
+}
+
+#password{
+    margin-left: 20%;
+    margin-right: 20%; 
+    width:30%;  
+    border-style: solid;
+}

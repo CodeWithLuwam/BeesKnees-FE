@@ -19,6 +19,7 @@ const NaviBar = () => {
             <Link to="/" id="home-page"> Home </Link> 
             <Link to="/exercises" id="exercises">Exercises</Link>
             <Link to="/tracker" id="tracker">Tracker</Link>
+            <Link to="/history" id="tracker">History</Link>
             {/* <Link to="about">Click to view our about page</Link> */}
           {/* </Nav> */}
         </div>
