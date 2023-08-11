@@ -1,66 +1,27 @@
-// import "../style/_History.css";
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React from "react";
 import Table from "react-bootstrap/Table";
+import "../style/History.css";
 
-const History = ({ baseURL, email }) => {
-  const [userData, setUserData] = useState([]);
-  const [exerciseData, setExerciseData] = useState([]);
-  const [currentUser, setCurrentUser] = useState("");
-
-  useEffect(() => {
-    const getUserEntries = () => {
-      axios
-        .get(`${baseURL}users/`)
-        .then((response) => {
-          const newUserData = response.data.map((user) => ({
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            entries: user.entries,
-          }));
-          setUserData(newUserData);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-
-    const getExerciseData = () => {
-      axios
-        .get(`${baseURL}exercises/`)
-        .then((response) => {
-          setExerciseData(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-
-    getUserEntries();
-    getExerciseData();
-  }, [baseURL]);
-
-  useEffect(() => {
-    userData.forEach((newUser) => {
-      if (email === newUser.email) {
-        setCurrentUser(newUser.name);
-        // console.log(`HISTORY - User Name: ${newUser.name}`);
-      }
-    });
-  }, [email, userData]);
-
-  const exerciseMap = {}; // Creating a mapping dictionary
-  exerciseData.forEach((exercise) => {
-    exerciseMap[exercise.id] = exercise.name;
-  });
+const History = ({
+  baseURL,
+  email,
+  exerciseMap,
+  currentForm,
+  setCurrentForm,
+  currentUser,
+  setCurrentUser,
+  userData,
+  setUserData,
+  exerciseData,
+  setExerciseData,
+  handleShow,
+}) => {
 
   return (
-    <>
+    <div className="page-container">
       {currentUser ? (
         <div>
-          <div id="title"> {currentUser} History</div>
+          <div id="title"> {currentUser}'s History</div>
           <Table
             className="traker-table"
             striped
@@ -95,15 +56,17 @@ const History = ({ baseURL, email }) => {
           </Table>
         </div>
       ) : (
-        <div>
-          Please
-          <Link to={`/`} id="login">
-            {" "}
-            login{" "}
-          </Link>
+        <div id="history-logged-out">
+          Please <span onClick={handleShow}>Sign In</span>
+          <iframe
+            title="exercising dog"
+            src="https://giphy.com/embed/5EJHDSPpFhbG0"
+            width="480"
+            height="255"
+          ></iframe>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

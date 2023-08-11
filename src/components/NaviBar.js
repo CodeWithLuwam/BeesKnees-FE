@@ -18,6 +18,13 @@ const NaviBar = ({
   handleClose,
   handleShow,
   currentForm,
+  setCurrentForm,
+  currentUser,
+  setCurrentUser,
+  userData,
+  setUserData,
+  exerciseData,
+  setExerciseData,
 }) => {
   return (
     <div id="container">
@@ -66,9 +73,24 @@ const NaviBar = ({
       <Link to="/history" id="tracker">
         History
       </Link>
-      <Button className="nav-button" variant="primary" onClick={handleShow}>
-        Sign In
-      </Button>
+
+
+      {currentUser ? (
+        <Button
+          className="nav-button"
+          variant="primary"
+          onClick={() => {
+            setCurrentUser("");
+            setEmail("");
+          }}
+        >
+          Sign Out
+        </Button>
+      ) : (
+        <Button className="nav-button" variant="primary" onClick={handleShow}>
+          Sign In
+        </Button>
+      )}
     </div>
   );
 };
