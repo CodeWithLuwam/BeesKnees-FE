@@ -4,16 +4,10 @@ import axios from "axios";
 import { useState } from "react";
 
 const Tracker = ({ exercisesData, getAllExercises, baseURL }) => {
-  const postEntry = ({ date, sets, reps_or_mins, exercise_id }) => {
+  const postEntry = (newEntry) => {
     try {
       axios
-        .post(`${baseURL}entry/`, {
-          date: date,
-          sets: sets,
-          reps_or_mins: reps_or_mins,
-          user: 1,
-          exercise: exercise_id,
-        })
+        .post(`${baseURL}entries/`, newEntry)
         .then((response) => {
           console.log(response);
         })
@@ -29,13 +23,12 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL }) => {
     date: "",
     sets: "",
     reps_or_mins: "",
-    // user: 1,
+    user: 1,
     exercise: "",
   });
 
   const submitEntry = (event, exercise_id) => {
     console.log("submitEntry");
-    // console.log(exercisesData);
     console.log(newEntry);
     // // event.preventDefault();
     postEntry(newEntry);
@@ -55,13 +48,12 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL }) => {
         <td className="input-text">
           <input
             type="text"
-            onChange={
-              (event) =>
-                setNewEntry({
-                  ...newEntry,
-                  date: event.target.value,
-                  exercise: exerciseData.id,
-                })
+            onChange={(event) =>
+              setNewEntry({
+                ...newEntry,
+                date: event.target.value,
+                exercise: exerciseData.id,
+              })
             }
           ></input>
         </td>
