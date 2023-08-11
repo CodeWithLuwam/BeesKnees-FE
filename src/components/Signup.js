@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/Signup.css";
+import { Modal, Button } from "react-bootstrap";
 
 const Signup = ({
   onFormSwitch,
@@ -17,7 +18,13 @@ const Signup = ({
 
 }) => {
   return (
-    <div className="auth-form-container">
+    <Modal show={show} onHide={handleClose} className="auth-form-container">
+    <Modal.Header closeButton>
+        <Modal.Title>Hello Friend =]</Modal.Title>
+      </Modal.Header>
+      {/* body starts */}
+      <Modal.Body > 
+    {/* <div className="auth-form-container"> */}
       <form className="signup-form" onSubmit={handleSubmit}>
         <label>Full name</label>
         <input
@@ -47,14 +54,24 @@ const Signup = ({
           id="password"
           name="password"
         />
-        <button id="log-in-button" type="submit">
+      </form> 
+      </Modal.Body>
+      {/* body ends */}
+
+      {/* footer starts */}
+      <Modal.Footer> 
+        <Button id="log-in-button" type="submit">
           Sign Up
-        </button>
-      </form>
-      <button id="switch" onClick={() => onFormSwitch("login")}>
+        </Button>
+      
+      <Button id="switch" onClick={() => onFormSwitch("login")}>
         Already have an account? Login here
-      </button>
-    </div>
+      </Button>
+      </Modal.Footer>
+
+    {/* </div> */}
+    </Modal>
+
   );
 };
 

@@ -1,5 +1,4 @@
 // import "../style/_History.css";
-import NaviBar from "./NaviBar";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -59,7 +58,6 @@ const History = ({ baseURL, email }) => {
 
   return (
     <>
-      <NaviBar />
       {currentUser ? (
         <div>
           <div id="title"> {currentUser} History</div>

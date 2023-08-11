@@ -1,15 +1,59 @@
 import { Link } from "react-router-dom";
 import "../style/NaviBar.css";
 import Button from "react-bootstrap/Button";
+import Login from "./Login";
+import Signup from "./Signup";
 
 const NaviBar = ({
+  onFormSwitch,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  name,
+  setName,
+  handleSubmit,
   show,
   setShow,
-  handleShow
+  handleClose,
+  handleShow,
+  currentForm,
 }) => {
-
   return (
     <div id="container">
+      {currentForm === "login" ? (
+        <Login
+          id="login"
+          onFormSwitch={onFormSwitch}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          show={show}
+          setShow={setShow}
+          handleShow={handleShow}
+          handleClose={handleClose}
+          currentForm={currentForm}
+        />
+      ) : (
+        <Signup
+          onFormSwitch={onFormSwitch}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          show={show}
+          setShow={setShow}
+          handleShow={handleShow}
+          handleClose={handleClose}
+          name={name}
+          setName={setName}
+          currentForm={currentForm}
+        />
+      )}
+
       <Link to="/" id="home-page">
         Home
       </Link>
