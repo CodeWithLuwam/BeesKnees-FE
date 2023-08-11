@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect} from "react";
 import '../style/Exercise.css';
 import { useLocation, Link } from 'react-router-dom';
-import NaviBar from "./NaviBar";
 
 
 const Exercise = ({baseURL}) => {
@@ -35,7 +34,6 @@ const Exercise = ({baseURL}) => {
 
   return (
     <div>
-      <NaviBar/>
       <div id="name"> <h1 id="exercise-name">{exerciseName}</h1></div>
 
   <div id="exercises-container">

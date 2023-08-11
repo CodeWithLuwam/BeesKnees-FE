@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/Login.css";
+import { Modal, Button } from "react-bootstrap";
 
 const Login = ({
   onFormSwitch,
@@ -8,9 +9,18 @@ const Login = ({
   password,
   setPassword,
   handleSubmit,
+  show,
+  setShow,
+  handleClose,
+  handleShow
 }) => {
   return (
-    <div className="auth-form-container">
+    <Modal show={show} onHide={handleClose} className="auth-form-container">
+      <Modal.Header closeButton>
+          <Modal.Title>Hello Friend =]</Modal.Title>
+        </Modal.Header>
+        {/* body starts */}
+        <Modal.Body > 
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="email">email </label>
         <input
@@ -32,14 +42,21 @@ const Login = ({
           id="password"
           name="password"
         />
-        <button id="login-button" type="submit">
-          Log In
-        </button>
       </form>
-      <button id="switch" onClick={() => onFormSwitch("Signup")}>
+      </Modal.Body>
+      {/* body ends */}
+      
+      {/* footer starts */}
+      <Modal.Footer> 
+        <Button id="login-button" type="submit" onClick={handleClose}>
+          Log In
+        </Button>
+      <Button id="switch" onClick={() => onFormSwitch("Signup")}>
         Don't have an account? Register here
-      </button>
-    </div>
+      </Button>
+      </Modal.Footer>
+      {/* footer ends */}
+    </Modal>
   );
 };
 

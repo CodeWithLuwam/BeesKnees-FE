@@ -1,7 +1,6 @@
 import { useState , useEffect} from "react";
 import "../style/ExercisesList.css"
 import { Link } from "react-router-dom";
-import NaviBar from "./NaviBar";
 
 
 const ExercisesList = ( {exercisesData, getAllExercises}) => {
@@ -42,7 +41,6 @@ const ExercisesList = ( {exercisesData, getAllExercises}) => {
   return <>
   {/* <button onClick={getAllExercises}>Get All Exercises</button> */}
   <div>
-  <NaviBar/>
     <div id="title"> <div className="glow"> Click on Exercise for Instructions</div></div>
 
   <div id="container">

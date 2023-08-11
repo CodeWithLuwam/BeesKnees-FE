@@ -35,6 +35,16 @@
     margin: 8px;
 }
 
+.nav-button{
+    padding: 10px;
+    color: white;
+    font-size: 1.1vw;;
+    font-weight: bolder;
+    border: 5px solid rgb(139, 108, 22);
+    transition-duration: 0.4s;
+    display: inline-block;
+    margin: 8px;}
+
 #home-page:hover {
     background-color: rgb(139, 108, 22); /* Green */
     color: white;

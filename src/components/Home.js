@@ -1,8 +1,7 @@
 import "../style/Home.css";
 import React from "react";
-import NaviBar from "./NaviBar";
-import Login from "./Login";
-import Signup from "./Signup";
+// import Login from "./Login";
+// import Signup from "./Signup";
 import { useState } from "react";
 
 const Home = ({
@@ -14,14 +13,46 @@ const Home = ({
   setName,
   handleSubmit,
 }) => {
-  const [currentForm, setCurrentForm] = useState("login");
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  };
+  // const [currentForm, setCurrentForm] = useState("login");
+  // const toggleForm = (formName) => {
+  //   setCurrentForm(formName);
+  // };
+  // const [show, setShow] = useState(false);
 
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
   return (
     <div>
-      <NaviBar />
+            {/* {currentForm === "login" ? (
+        <Login
+          id="login"
+          onFormSwitch={toggleForm}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          show={show}
+          setShow={setShow}
+          handleShow={handleShow}
+          handleClose={handleClose}
+        />
+      ) : (
+        <Signup
+          onFormSwitch={toggleForm}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          show={show}
+          setShow={setShow}
+          handleShow={handleShow}
+          handleClose={handleClose}
+          name={name}
+          setName={setName}
+        />
+      )} */}
 
       <h1 id="beesknees"> Bee's Knees</h1>
 
@@ -47,28 +78,7 @@ const Home = ({
           </div>
         </div>
       </div>
-      {currentForm === "login" ? (
-        <Login
-        id="login"
-          onFormSwitch={toggleForm}
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          handleSubmit={handleSubmit}
-        />
-      ) : (
-        <Signup
-          onFormSwitch={toggleForm}
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          name={name}
-          setName={setName}
-          handleSubmit={handleSubmit}
-        />
-      )}
+
     </div>
   );
 };

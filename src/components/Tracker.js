@@ -1,5 +1,4 @@
 import "../style/Tracker.css";
-import NaviBar from "./NaviBar";
 // import { Table } from 'react-bootstrap'; 
 import Table from 'react-bootstrap/Table';
 
@@ -40,7 +39,6 @@ const Tracker = ({exercisesData, getAllExercises}) => {
   };
 
   return <>
-  <NaviBar/>
     <Table className="traker-table" striped bordered hover variant="light">
       <thead>
         <tr>
