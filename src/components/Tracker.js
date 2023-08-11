@@ -9,6 +9,7 @@ const Tracker = ({
   baseURL,
   currentUser,
   handleShow,
+  getUserEntries,
 }) => {
   useEffect(() => getAllExercises(), []);
 
@@ -38,6 +39,7 @@ const Tracker = ({
   const submitEntry = (event, exercise_id) => {
     // // event.preventDefault();
     postEntry(newEntry);
+    getUserEntries();
     setNewEntry({
       date: "",
       sets: "",
@@ -45,6 +47,8 @@ const Tracker = ({
       user: "",
       exercise: "",
     });
+    const form = document.getElementById("form")
+    form.reset()
   };
 
   const exerciseInfo = () => {
@@ -100,6 +104,7 @@ const Tracker = ({
 
   return (
     <div id="tracker-container">
+      <form id="form">
       <Table striped bordered hover variant="light" className="traker-table">
         <thead>
           <tr>
@@ -112,6 +117,7 @@ const Tracker = ({
         </thead>
         <tbody>{exerciseInfo()}</tbody>
       </Table>
+      </form>
     </div>
   );
 };
