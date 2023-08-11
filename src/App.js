@@ -21,7 +21,7 @@ const App = () => {
   const [name, setName] = useState("");
 
   const [currentForm, setCurrentForm] = useState("login");
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState({});
   const [userData, setUserData] = useState([]);
   const [exerciseData, setExerciseData] = useState([]);
 
@@ -93,7 +93,11 @@ const App = () => {
   useEffect(() => {
     userData.forEach((newUser) => {
       if (email === newUser.email) {
-        setCurrentUser(newUser.name);
+        setCurrentUser({
+          name: newUser.name,
+          email: newUser.userEmail,
+          id: newUser.id,
+        });
         // console.log(`HISTORY - User Name: ${newUser.name}`);
       }
     });
@@ -164,6 +168,7 @@ const App = () => {
                 exercisesData={exercisesData}
                 getAllExercises={getAllExercises}
                 baseURL={baseURL}
+                currentUser={currentUser}
               />
             }
           />

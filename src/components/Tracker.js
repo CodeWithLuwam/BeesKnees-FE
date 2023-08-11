@@ -3,7 +3,7 @@ import Table from "react-bootstrap/Table";
 import axios from "axios";
 import { useState } from "react";
 
-const Tracker = ({ exercisesData, getAllExercises, baseURL }) => {
+const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser }) => {
   const postEntry = (newEntry) => {
     try {
       axios
