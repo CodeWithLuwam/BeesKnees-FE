@@ -3,7 +3,7 @@ import Table from "react-bootstrap/Table";
 import axios from "axios";
 import { useState } from "react";
 
-const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser }) => {
+const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser, handleShow }) => {
   const postEntry = (newEntry) => {
     try {
       axios
@@ -55,6 +55,7 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser }) => {
                 exercise: exerciseData.id,
               })
             }
+            onClick={!currentUser.name ? handleShow : null }
           ></input>
         </td>
         <td className="input-text">
@@ -63,6 +64,7 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser }) => {
             onChange={(event) =>
               setNewEntry({ ...newEntry, sets: event.target.value })
             }
+            onClick={!currentUser.name ? handleShow : null }
           ></input>
         </td>
         <td className="input-text">
@@ -71,6 +73,7 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser }) => {
             onChange={(event) =>
               setNewEntry({ ...newEntry, reps_or_mins: event.target.value })
             }
+            onClick={!currentUser.name ? handleShow : null }
           ></input>
         </td>
         <td>

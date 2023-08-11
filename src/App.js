@@ -169,6 +169,7 @@ const App = () => {
                 getAllExercises={getAllExercises}
                 baseURL={baseURL}
                 currentUser={currentUser}
+                handleShow={handleShow}
               />
             }
           />
