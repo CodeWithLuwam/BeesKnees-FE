@@ -18,6 +18,13 @@ const NaviBar = ({
   handleClose,
   handleShow,
   currentForm,
+  setCurrentForm,
+  currentUser,
+  setCurrentUser,
+  userData,
+  setUserData,
+  exerciseData,
+  setExerciseData,
 }) => {
   return (
     <div id="container">
@@ -66,9 +73,31 @@ const NaviBar = ({
       <Link to="/history" id="tracker">
         History
       </Link>
-      <Button className="nav-button" variant="primary" onClick={handleShow}>
-        Sign In
-      </Button>
+
+      {/* condition ? <expression if true> : <expression if false> */}
+
+      {/* 
+      condition = currentUSer 
+      true === Sign out
+      false = Sign in
+      */}
+
+      {currentUser ? (
+        <Button
+          className="nav-button"
+          variant="primary"
+          onClick={() => {
+            setCurrentUser("");
+            setEmail("");
+          }}
+        >
+          Sign Out
+        </Button>
+      ) : (
+        <Button className="nav-button" variant="primary" onClick={handleShow}>
+          Sign In
+        </Button>
+      )}
     </div>
   );
 };

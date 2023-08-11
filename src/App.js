@@ -25,7 +25,11 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+
   const [currentForm, setCurrentForm] = useState("login");
+  const [currentUser, setCurrentUser] = useState("");
+  const [userData, setUserData] = useState([]);
+  const [exerciseData, setExerciseData] = useState([]);
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -57,6 +61,53 @@ const App = () => {
       .catch((error) => {});
   };
 
+  useEffect(() => {
+    const getUserEntries = () => {
+      axios
+        .get(`${baseURL}users/`)
+        .then((response) => {
+          const newUserData = response.data.map((user) => ({
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            entries: user.entries,
+          }));
+          setUserData(newUserData);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    getUserEntries();
+    getExerciseData();
+  }, [baseURL]);
+
+  const getExerciseData = () => {
+    axios
+      .get(`${baseURL}exercises/`)
+      .then((response) => {
+        setExerciseData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    userData.forEach((newUser) => {
+      if (email === newUser.email) {
+        setCurrentUser(newUser.name);
+        // console.log(`HISTORY - User Name: ${newUser.name}`);
+      }
+    });
+  }, [email, userData]);
+
+  const exerciseMap = {}; // Creating a mapping dictionary
+  exerciseData.forEach((exercise) => {
+    exerciseMap[exercise.id] = exercise.name;
+  });
+
   return (
     <StrictMode>
       <NaviBar
@@ -73,6 +124,13 @@ const App = () => {
         name={name}
         setName={setName}
         currentForm={currentForm}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+        userData={userData}
+        setUserData={setUserData}
+        exerciseData={exerciseData}
+        setExerciseData={setExerciseData}
+
       />
 
       <div>
@@ -115,7 +173,23 @@ const App = () => {
           />
           <Route
             path="/history"
-            element={<History email={email} baseURL={baseURL} />}
+            element={
+              <History
+                email={email}
+                baseURL={baseURL}
+                exerciseMap={exerciseMap}
+                currentForm={currentForm}
+                setCurrentForm={setCurrentForm}
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+                userData={userData}
+                setUserData={setUserData}
+                exerciseData={exerciseData}
+                setExerciseData={setExerciseData}
+                handleShow={handleShow}
+
+              />
+            }
           />
         </Routes>
         <div></div>

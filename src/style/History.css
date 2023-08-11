@@ -27,5 +27,9 @@ input {
     font-weight: bolder;
     border: none;
     color: white;
+}
 
+#history-logged-out{
+    display: flex;
+    flex-direction: column;
 }
