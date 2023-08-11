@@ -74,13 +74,6 @@ const NaviBar = ({
         History
       </Link>
 
-      {/* condition ? <expression if true> : <expression if false> */}
-
-      {/* 
-      condition = currentUSer 
-      true === Sign out
-      false = Sign in
-      */}
 
       {currentUser ? (
         <Button

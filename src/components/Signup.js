@@ -24,7 +24,6 @@ const Signup = ({
       </Modal.Header>
       {/* body starts */}
       <Modal.Body > 
-    {/* <div className="auth-form-container"> */}
       <form className="signup-form" onSubmit={handleSubmit}>
         <label>Full name</label>
         <input
@@ -69,7 +68,6 @@ const Signup = ({
       </Button>
       </Modal.Footer>
 
-    {/* </div> */}
     </Modal>
 
   );

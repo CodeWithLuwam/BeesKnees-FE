@@ -6,8 +6,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  BrowserRouter,
 } from "react-router-dom";
 import ExercisesList from "./components/ExercisesList";
 import Home from "./components/Home";

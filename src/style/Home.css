@@ -1,6 +1,5 @@
 #beesknees {
     text-align: center;
-    /* color: rgb(139, 108, 22); */
     color: white;
     background-color: #010203; 
     font-size: 10vw;
@@ -10,7 +9,6 @@
 }
 
 #center-info {
-    /* display: block; */
     background-color: #010203; 
     color:rgb(139, 108, 22) ;
     font-size: 3vw;
