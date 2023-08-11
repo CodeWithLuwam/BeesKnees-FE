@@ -1,9 +1,17 @@
 import "../style/Tracker.css";
 import Table from "react-bootstrap/Table";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser, handleShow }) => {
+const Tracker = ({
+  exercisesData,
+  getAllExercises,
+  baseURL,
+  currentUser,
+  handleShow,
+}) => {
+  useEffect(() => getAllExercises(), []);
+
   const postEntry = (newEntry) => {
     try {
       axios
@@ -23,20 +31,18 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser, handleS
     date: "",
     sets: "",
     reps_or_mins: "",
-    user: 1,
+    user: "",
     exercise: "",
   });
 
   const submitEntry = (event, exercise_id) => {
-    console.log("submitEntry");
-    console.log(newEntry);
     // // event.preventDefault();
     postEntry(newEntry);
     setNewEntry({
       date: "",
       sets: "",
       reps_or_mins: "",
-      // user: 1,
+      user: "",
       exercise: "",
     });
   };
@@ -53,9 +59,10 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser, handleS
                 ...newEntry,
                 date: event.target.value,
                 exercise: exerciseData.id,
+                user: currentUser.id,
               })
             }
-            onClick={!currentUser.name ? handleShow : null }
+            onClick={!currentUser.name ? handleShow : null}
           ></input>
         </td>
         <td className="input-text">
@@ -64,7 +71,7 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser, handleS
             onChange={(event) =>
               setNewEntry({ ...newEntry, sets: event.target.value })
             }
-            onClick={!currentUser.name ? handleShow : null }
+            onClick={!currentUser.name ? handleShow : null}
           ></input>
         </td>
         <td className="input-text">
@@ -73,7 +80,7 @@ const Tracker = ({ exercisesData, getAllExercises, baseURL, currentUser, handleS
             onChange={(event) =>
               setNewEntry({ ...newEntry, reps_or_mins: event.target.value })
             }
-            onClick={!currentUser.name ? handleShow : null }
+            onClick={!currentUser.name ? handleShow : null}
           ></input>
         </td>
         <td>
