@@ -2,11 +2,7 @@ import axios from "axios";
 import "./App.css";
 import { useState, useEffect } from "react";
 import Exercise from "./components/Exercise";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ExercisesList from "./components/ExercisesList";
 import Home from "./components/Home";
 import { StrictMode } from "react";
@@ -15,8 +11,8 @@ import History from "./components/History";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NaviBar from "../src/components/NaviBar";
 
-const baseURL = "https://beesknees-4h5l.onrender.com/";
-// const baseURL = "http://localhost:8000/";
+// const baseURL = "https://beesknees-4h5l.onrender.com/";
+const baseURL = "http://localhost:8000/";
 
 const App = () => {
   const [exercisesData, setExercisesData] = useState([]);
@@ -54,6 +50,8 @@ const App = () => {
             image: exercise.image,
           };
         });
+        console.log("newData");
+        console.log(newData);
         setExercisesData(newData);
       })
       .catch((error) => {});
@@ -128,7 +126,6 @@ const App = () => {
         setUserData={setUserData}
         exerciseData={exerciseData}
         setExerciseData={setExerciseData}
-
       />
 
       <div>
@@ -166,6 +163,7 @@ const App = () => {
               <Tracker
                 exercisesData={exercisesData}
                 getAllExercises={getAllExercises}
+                baseURL={baseURL}
               />
             }
           />
@@ -185,7 +183,6 @@ const App = () => {
                 exerciseData={exerciseData}
                 setExerciseData={setExerciseData}
                 handleShow={handleShow}
-
               />
             }
           />

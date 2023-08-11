@@ -1,16 +1,17 @@
-.traker-table, .traker-table2 {
+.traker-table {
     color: white;
     padding: 6px;
     margin: 25px;
-}
-
-.traker-table {
     background-color: rgb(139, 108, 22);
 }
 
-.traker-table2 {
-    /* background-color: rgb(255, 255, 255); */
-    background-color: silver;
+#tracker-container{
+    width: 50vw;
+    color: white;
+}
+
+button {
+    color: white;
 }
 
 .input-text{
@@ -23,5 +24,4 @@ input {
     font-weight: bolder;
     border: none;
     color: white;
-
 }
