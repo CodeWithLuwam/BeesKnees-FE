@@ -75,7 +75,7 @@ const NaviBar = ({
       </Link>
 
 
-      {currentUser ? (
+      {currentUser.name ? (
         <Button
           className="nav-button"
           variant="primary"

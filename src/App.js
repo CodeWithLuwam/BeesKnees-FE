@@ -11,8 +11,8 @@ import History from "./components/History";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NaviBar from "../src/components/NaviBar";
 
-// const baseURL = "https://beesknees-4h5l.onrender.com/";
-const baseURL = "http://localhost:8000/";
+const baseURL = "https://beesknees-4h5l.onrender.com/";
+// const baseURL = "http://localhost:8000/";
 
 const App = () => {
   const [exercisesData, setExercisesData] = useState([]);
@@ -21,7 +21,7 @@ const App = () => {
   const [name, setName] = useState("");
 
   const [currentForm, setCurrentForm] = useState("login");
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState({});
   const [userData, setUserData] = useState([]);
   const [exerciseData, setExerciseData] = useState([]);
 
@@ -93,7 +93,11 @@ const App = () => {
   useEffect(() => {
     userData.forEach((newUser) => {
       if (email === newUser.email) {
-        setCurrentUser(newUser.name);
+        setCurrentUser({
+          name: newUser.name,
+          email: newUser.userEmail,
+          id: newUser.id,
+        });
         // console.log(`HISTORY - User Name: ${newUser.name}`);
       }
     });
@@ -164,6 +168,8 @@ const App = () => {
                 exercisesData={exercisesData}
                 getAllExercises={getAllExercises}
                 baseURL={baseURL}
+                currentUser={currentUser}
+                handleShow={handleShow}
               />
             }
           />

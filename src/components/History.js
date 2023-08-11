@@ -19,9 +19,9 @@ const History = ({
 
   return (
     <div className="page-container">
-      {currentUser ? (
+      {currentUser.name ? (
         <div>
-          <div id="title"> {currentUser}'s History</div>
+          <div id="title"> {currentUser.name}'s History</div>
           <Table
             className="traker-table"
             striped
