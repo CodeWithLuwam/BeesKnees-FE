@@ -50,15 +50,12 @@ const App = () => {
             image: exercise.image,
           };
         });
-        console.log("newData");
-        console.log(newData);
         setExercisesData(newData);
       })
       .catch((error) => {});
   };
 
   useEffect(() => {
-
     getUserEntries();
 
     getExerciseData();
@@ -80,7 +77,6 @@ const App = () => {
         console.log(error);
       });
   };
-
 
   const getExerciseData = () => {
     axios
@@ -133,6 +129,7 @@ const App = () => {
         setUserData={setUserData}
         exerciseData={exerciseData}
         setExerciseData={setExerciseData}
+        baseURL={baseURL}
       />
 
       <div>

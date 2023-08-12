@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/Signup.css";
 import { Modal, Button } from "react-bootstrap";
+import axios from "axios";
 
 const Signup = ({
   onFormSwitch,
@@ -14,62 +15,97 @@ const Signup = ({
   show,
   setShow,
   handleClose,
-  handleShow
-
+  handleShow,
+  baseURL,
 }) => {
+  // const [newUserData, setNewUserData] = useState({
+  //   name: "",
+  //   email: "",
+  //   passowrd: "",
+  // });
+
+  const addNewUser = (name, email) => {
+    console.log(`posting person: ${name} • ${email}`);
+    axios
+      .post(`${baseURL}users/`, { name: name, email: email })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // const createUser = (event, name, email) => {
+  //   console.log(`NEW USER: ${name} • ${email}`);
+  //   addNewUser(newUserData);
+  //   setNewUserData({
+  //     name: "",
+  //     email: "",
+  //     passowrd: "",
+  //   });
+  // };
+
   return (
     <Modal show={show} onHide={handleClose} className="auth-form-container">
-    <Modal.Header closeButton>
+      <Modal.Header closeButton>
         <Modal.Title>Hello Friend =]</Modal.Title>
       </Modal.Header>
       {/* body starts */}
-      <Modal.Body > 
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <label>Full name</label>
-        <input
-          className="login-input"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="full name"
-          id="name"
-          name="name"
-        />
-        <label htmlFor="email">email </label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="youremail@gmail.com"
-          id="email"
-          name="email"
-        />
-        <label htmlFor="password">password </label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="password"
-          id="password"
-          name="password"
-        />
-      </form> 
+      <Modal.Body>
+        <form className="signup-form" onSubmit={handleClose}>
+          <label>Full name</label>
+          <input
+            className="login-input"
+            // value={name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="full name"
+            id="name"
+            name="name"
+          />
+          <label htmlFor="email">email </label>
+          <input
+            // value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="youremail@gmail.com"
+            id="email"
+            name="email"
+          />
+          <label htmlFor="password">password </label>
+          <input
+            // value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="password"
+            id="password"
+            name="password"
+          />
+        </form>
       </Modal.Body>
       {/* body ends */}
 
       {/* footer starts */}
-      <Modal.Footer> 
-        <Button id="log-in-button" type="submit">
+      <Modal.Footer>
+        <Button
+          id="log-in-button"
+          type="submit"
+          onClick={() => {
+            console.log(`submited person: ${name} • ${email}`);
+            addNewUser(name, email);
+            
+            // createUser(null, newUserData.name, newUserData.email);
+          }}
+        >
           Sign Up
         </Button>
-      
-      <Button id="switch" onClick={() => onFormSwitch("login")}>
-        Already have an account? Login here
-      </Button>
+
+        <Button id="switch" onClick={() => onFormSwitch("login")}>
+          Already have an account? Login here
+        </Button>
       </Modal.Footer>
-
     </Modal>
-
   );
 };
 

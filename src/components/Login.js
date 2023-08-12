@@ -25,7 +25,7 @@ const Login = ({
         <label htmlFor="email">email </label>
         <input
           className="login-input"
-          value={email}
+          // value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="youremail@gmail.com"
@@ -35,7 +35,7 @@ const Login = ({
         <label htmlFor="password">password </label>
         <input
           className="login-input"
-          value={password}
+          // value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="password"

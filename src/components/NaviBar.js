@@ -25,6 +25,7 @@ const NaviBar = ({
   setUserData,
   exerciseData,
   setExerciseData,
+  baseURL
 }) => {
   return (
     <div id="container">
@@ -58,6 +59,7 @@ const NaviBar = ({
           name={name}
           setName={setName}
           currentForm={currentForm}
+          baseURL={baseURL}
         />
       )}
 

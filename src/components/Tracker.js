@@ -11,22 +11,6 @@ const Tracker = ({
   handleShow,
   getUserEntries,
 }) => {
-  useEffect(() => getAllExercises(), []);
-
-  const postEntry = (newEntry) => {
-    try {
-      axios
-        .post(`${baseURL}entries/`, newEntry)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } catch (error) {
-      console.log("Try-catch error:", error);
-    }
-  };
 
   const [newEntry, setNewEntry] = useState({
     date: "",
@@ -36,20 +20,8 @@ const Tracker = ({
     exercise: "",
   });
 
-  const submitEntry = (event, exercise_id) => {
-    // // event.preventDefault();
-    postEntry(newEntry);
-    getUserEntries();
-    setNewEntry({
-      date: "",
-      sets: "",
-      reps_or_mins: "",
-      user: "",
-      exercise: "",
-    });
-    const form = document.getElementById("form")
-    form.reset()
-  };
+  // to populate exercises "movements" to table on tracker
+  useEffect(() => getAllExercises(), []);
 
   const exerciseInfo = () => {
     return exercisesData.map((exerciseData, index) => (
@@ -102,7 +74,42 @@ const Tracker = ({
     ));
   };
 
-  return (
+  // posting to the database
+  const postEntry = (newEntry) => {
+    try {
+      axios
+        .post(`${baseURL}entries/`, newEntry)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (error) {
+      console.log("Try-catch error:", error);
+    }
+  };
+
+//  the function thats triggered by the submit button and calls 
+// the function with the axios call 
+  const submitEntry = (event, exercise_id) => {
+    // // event.preventDefault();
+    postEntry(newEntry); // axios call
+    getUserEntries(); //is a prop to updates userEntry & history is using userEntry
+    setNewEntry({
+      date: "",
+      sets: "",
+      reps_or_mins: "",
+      user: "",
+      exercise: "",
+    });
+    const form = document.getElementById("form")
+    form.reset()
+  };
+
+
+
+  return ( // the beauty part
     <div id="tracker-container">
       <form id="form">
       <Table striped bordered hover variant="light" className="traker-table">
