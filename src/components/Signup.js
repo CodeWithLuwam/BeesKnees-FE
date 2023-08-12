@@ -53,7 +53,7 @@ const Signup = ({
       </Modal.Header>
       {/* body starts */}
       <Modal.Body>
-        <form className="signup-form" onSubmit={handleClose}>
+        <form className="signup-form" onSubmit={handleSubmit}>
           <label>Full name</label>
           <input
             className="login-input"
@@ -94,7 +94,7 @@ const Signup = ({
           onClick={() => {
             console.log(`submited person: ${name} • ${email}`);
             addNewUser(name, email);
-            
+            handleClose();
             // createUser(null, newUserData.name, newUserData.email);
           }}
         >
