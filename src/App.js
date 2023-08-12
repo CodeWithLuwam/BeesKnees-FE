@@ -58,26 +58,29 @@ const App = () => {
   };
 
   useEffect(() => {
-    const getUserEntries = () => {
-      axios
-        .get(`${baseURL}users/`)
-        .then((response) => {
-          const newUserData = response.data.map((user) => ({
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            entries: user.entries,
-          }));
-          setUserData(newUserData);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
 
     getUserEntries();
+
     getExerciseData();
-  }, [baseURL]);
+  }, []);
+
+  const getUserEntries = () => {
+    axios
+      .get(`${baseURL}users/`)
+      .then((response) => {
+        const newUserData = response.data.map((user) => ({
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          entries: user.entries,
+        }));
+        setUserData(newUserData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
 
   const getExerciseData = () => {
     axios
@@ -170,6 +173,7 @@ const App = () => {
                 baseURL={baseURL}
                 currentUser={currentUser}
                 handleShow={handleShow}
+                getUserEntries={getUserEntries}
               />
             }
           />
