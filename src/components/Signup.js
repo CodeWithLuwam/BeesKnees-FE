@@ -17,6 +17,8 @@ const Signup = ({
   handleClose,
   handleShow,
   baseURL,
+  setCurrentUser,
+  currentUser,
 }) => {
   // const [newUserData, setNewUserData] = useState({
   //   name: "",
@@ -25,11 +27,10 @@ const Signup = ({
   // });
 
   const addNewUser = (name, email) => {
-    console.log(`posting person: ${name} • ${email}`);
     axios
       .post(`${baseURL}users/`, { name: name, email: email })
       .then((response) => {
-        console.log(response);
+        console.log(`response: ${response.data}`);
       })
       .catch((error) => {
         console.log(error);
@@ -92,8 +93,9 @@ const Signup = ({
           id="log-in-button"
           type="submit"
           onClick={() => {
-            console.log(`submited person: ${name} • ${email}`);
             addNewUser(name, email);
+            setCurrentUser({ ...currentUser, email: email });
+            console.log(`CURRENT USER person: ${currentUser.email} • ${email}`);
             handleClose();
             // createUser(null, newUserData.name, newUserData.email);
           }}
