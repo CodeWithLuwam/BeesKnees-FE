@@ -25,7 +25,7 @@ const NaviBar = ({
   setUserData,
   exerciseData,
   setExerciseData,
-  baseURL
+  baseURL,
 }) => {
   return (
     <div id="container">
@@ -60,6 +60,8 @@ const NaviBar = ({
           setName={setName}
           currentForm={currentForm}
           baseURL={baseURL}
+          setCurrentUser={setCurrentUser}
+          currentUser={currentUser}
         />
       )}
 
@@ -76,13 +78,12 @@ const NaviBar = ({
         History
       </Link>
 
-
       {currentUser.name ? (
         <Button
           className="nav-button"
           variant="primary"
           onClick={() => {
-            setCurrentUser("");
+            setCurrentUser({});
             setEmail("");
           }}
         >

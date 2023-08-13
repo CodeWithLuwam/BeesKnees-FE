@@ -2,16 +2,18 @@
     display:flex;
     color: rgb(8, 8, 8);
     background-color: rgb(139, 108, 22);
-    height: 11vw;
-    width: 11vw;
+    height: 13vw;
+    width: 13vw;
     border-radius: 25%;
     padding: 60px;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: bolder;
-    font-size: 40px;
-    margin-right: 80px; 
+    /* font-size: 40px; */
+    font-size: 2vw;
+    /* margin-right: 80px;  */
+    margin-right: 10vw; 
     transition-duration: 0.4s;
 }
 
@@ -28,6 +30,7 @@
     margin: auto;
     justify-content: space-around;
     padding:20px;
+    /* padding:1em; */
     flex-wrap: wrap; 
 }
 
@@ -51,7 +54,8 @@
 
 .glow {
     font-weight: bolder;
-    font-size: 87px;
+    /* font-size: 87px; */
+    font-size: 6vw;
     color: rgb(12, 12, 11);
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
