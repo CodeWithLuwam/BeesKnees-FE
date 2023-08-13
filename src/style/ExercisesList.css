@@ -16,6 +16,7 @@
     margin-right: 10vw; 
     transition-duration: 0.4s;
     margin-bottom: 1vw;
+    text-decoration: none;
 }
 
 #exercise-box:hover {
