@@ -15,6 +15,7 @@
     /* margin-right: 80px;  */
     margin-right: 10vw; 
     transition-duration: 0.4s;
+    margin-bottom: 1vw;
 }
 
 #exercise-box:hover {
@@ -26,12 +27,15 @@
 #exercises-container {
     display: flex;
     /* width: 1000px; */
-    height: 50vw; 
+    /* height: 50vw;  */
+    width:100%;
+    height:100%;
     margin: auto;
     justify-content: space-around;
     padding:20px;
     /* padding:1em; */
     flex-wrap: wrap; 
+    margin-bottom: ;
 }
 
 #container{
