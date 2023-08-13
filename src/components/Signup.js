@@ -31,6 +31,10 @@ const Signup = ({
       .post(`${baseURL}users/`, { name: name, email: email })
       .then((response) => {
         console.log(`response: ${response.data}`);
+        // setCurrentUser({ ...currentUser, email: email, name:name });
+        setCurrentUser( response.data );
+
+        setEmail(email)
       })
       .catch((error) => {
         console.log(error);
@@ -94,7 +98,6 @@ const Signup = ({
           type="submit"
           onClick={() => {
             addNewUser(name, email);
-            setCurrentUser({ ...currentUser, email: email });
             console.log(`CURRENT USER person: ${currentUser.email} • ${email}`);
             handleClose();
             // createUser(null, newUserData.name, newUserData.email);

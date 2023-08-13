@@ -16,8 +16,9 @@ const Tracker = ({
     date: "",
     sets: "",
     reps_or_mins: "",
-    user: "",
+    user: currentUser.id,
     exercise: "",
+  
   });
 
   // to populate exercises "movements" to table on tracker
@@ -76,6 +77,7 @@ const Tracker = ({
 
   // posting to the database
   const postEntry = (newEntry) => {
+    console.log(currentUser, newEntry)
     try {
       axios
         .post(`${baseURL}entries/`, newEntry)
@@ -100,7 +102,7 @@ const Tracker = ({
       date: "",
       sets: "",
       reps_or_mins: "",
-      user: "",
+      user: currentUser.id,
       exercise: "",
     });
     const form = document.getElementById("form")

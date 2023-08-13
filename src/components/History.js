@@ -40,8 +40,10 @@ const History = ({
             <tbody>
               {userData
                 .filter((user) => email === user.email)
-                .map((user) =>
-                  user.entries.map((entry) => (
+                .map((user) => {
+                  console.log(user)
+                  return user.entries.map((entry) => (
+                    
                     <tr key={entry.id}>
                       <td className="input-text">
                         {exerciseMap[entry.exercise]}
@@ -51,6 +53,7 @@ const History = ({
                       <td className="input-text">{entry.reps_or_mins}</td>
                     </tr>
                   ))
+                  }
                 )}
             </tbody>
           </Table>
