@@ -11,8 +11,8 @@ import History from "./components/History";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NaviBar from "../src/components/NaviBar";
 
-// const baseURL = "https://beesknees-4h5l.onrender.com/";
-const baseURL = "http://localhost:8000/";
+const baseURL = "https://beesknees-4h5l.onrender.com/";
+// const baseURL = "http://localhost:8000/";
 
 const App = () => {
   const [exercisesData, setExercisesData] = useState([]);
