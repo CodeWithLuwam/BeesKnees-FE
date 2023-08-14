@@ -12,13 +12,14 @@ const Tracker = ({
   getUserEntries,
 }) => {
 
+  const [submittedExercises, setSubmittedExercises] = useState([]);
+
   const [newEntry, setNewEntry] = useState({
     date: "",
     sets: "",
     reps_or_mins: "",
     user: currentUser.id,
     exercise: "",
-  
   });
 
   // to populate exercises "movements" to table on tracker
@@ -71,6 +72,7 @@ const Tracker = ({
             Submit
           </button>
         </td>
+        <td>{submittedExercises.includes(exerciseData.id) ? "✅" : null}</td>
       </tr>
     ));
   };
@@ -107,6 +109,11 @@ const Tracker = ({
     });
     const form = document.getElementById("form")
     form.reset()
+
+    setSubmittedExercises((prevSubmittedExercises) => [
+      ...prevSubmittedExercises,
+      exercise_id,
+    ]);
   };
 
 
@@ -122,6 +129,7 @@ const Tracker = ({
             <th>Sets</th>
             <th>Reps/Mins</th>
             <th>Submit</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{exerciseInfo()}</tbody>
