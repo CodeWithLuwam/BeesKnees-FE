@@ -19,13 +19,11 @@ const Login = ({
       <Modal.Header closeButton>
           <Modal.Title>Hello Friend =]</Modal.Title>
         </Modal.Header>
-        {/* body starts */}
         <Modal.Body > 
       <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="email">email </label>
         <input
           className="login-input"
-          // value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="youremail@gmail.com"
@@ -35,7 +33,6 @@ const Login = ({
         <label htmlFor="password">password </label>
         <input
           className="login-input"
-          // value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="password"
@@ -43,10 +40,7 @@ const Login = ({
           name="password"
         />
       </form>
-      </Modal.Body>
-      {/* body ends */}
-      
-      {/* footer starts */}
+      </Modal.Body>     
       <Modal.Footer> 
         <Button id="login-button" type="submit" onClick={handleClose}>
           Log In
@@ -55,9 +49,7 @@ const Login = ({
         Don't have an account? Register here
       </Button>
       </Modal.Footer>
-      {/* footer ends */}
     </Modal>
   );
 };
-
 export default Login;

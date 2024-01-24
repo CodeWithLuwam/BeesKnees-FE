@@ -3,17 +3,10 @@ import Table from "react-bootstrap/Table";
 import "../style/History.css";
 
 const History = ({
-  baseURL,
   email,
   exerciseMap,
-  currentForm,
-  setCurrentForm,
   currentUser,
-  setCurrentUser,
   userData,
-  setUserData,
-  exerciseData,
-  setExerciseData,
   handleShow,
 }) => {
 

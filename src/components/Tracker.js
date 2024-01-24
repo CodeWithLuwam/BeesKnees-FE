@@ -13,7 +13,7 @@ const Tracker = ({
 }) => {
 
   const [submittedExercises, setSubmittedExercises] = useState([]);
-
+  
   const [newEntry, setNewEntry] = useState({
     date: "",
     sets: "",
@@ -76,7 +76,6 @@ const Tracker = ({
       </tr>
     ));
   };
-
   // posting to the database
   const postEntry = (newEntry) => {
     console.log(currentUser, newEntry)
@@ -94,8 +93,7 @@ const Tracker = ({
     }
   };
 
-//  the function thats triggered by the submit button and calls 
-// the function with the axios call 
+//  the function thats triggered by the submit button and calls the function with the axios call 
   const submitEntry = (event, exercise_id) => {
     // // event.preventDefault();
     postEntry(newEntry); // axios call
@@ -115,8 +113,6 @@ const Tracker = ({
       exercise_id,
     ]);
   };
-
-
 
   return ( // the beauty part
     <div id="tracker-container">

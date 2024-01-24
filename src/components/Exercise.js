@@ -3,7 +3,6 @@ import { useState, useEffect} from "react";
 import '../style/Exercise.css';
 import { useLocation } from 'react-router-dom';
 
-
 const Exercise = ({baseURL}) => {
   const location = useLocation()
   const { from } = location.state
@@ -22,8 +21,7 @@ const Exercise = ({baseURL}) => {
       setExerciseName(exerciseData.name)
       setExerciseDescription(exerciseData.description)
       setExerciseImage(exerciseData.image)
-    })
-    
+    })    
     .catch((error) => {
       // Code that executes with an unsuccessful response goes here
     });    
@@ -42,6 +40,5 @@ const Exercise = ({baseURL}) => {
     </div>
   );
 }
-
 export default Exercise;
 

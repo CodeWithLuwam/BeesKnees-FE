@@ -7,15 +7,12 @@ const Signup = ({
   onFormSwitch,
   email,
   setEmail,
-  password,
   setPassword,
   name,
   setName,
   handleSubmit,
   show,
-  setShow,
   handleClose,
-  handleShow,
   baseURL,
   setCurrentUser,
   currentUser,
@@ -105,7 +102,6 @@ const Signup = ({
         >
           Sign Up
         </Button>
-
         <Button id="switch" onClick={() => onFormSwitch("login")}>
           Already have an account? Login here
         </Button>
@@ -113,5 +109,4 @@ const Signup = ({
     </Modal>
   );
 };
-
 export default Signup;

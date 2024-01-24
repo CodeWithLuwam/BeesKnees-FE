@@ -18,13 +18,8 @@ const NaviBar = ({
   handleClose,
   handleShow,
   currentForm,
-  setCurrentForm,
   currentUser,
   setCurrentUser,
-  userData,
-  setUserData,
-  exerciseData,
-  setExerciseData,
   baseURL,
 }) => {
   return (
