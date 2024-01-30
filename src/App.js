@@ -24,6 +24,7 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState({});
   const [userData, setUserData] = useState([]);
   const [exerciseData, setExerciseData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -39,6 +40,8 @@ const App = () => {
   };
 
   const getAllExercises = () => {
+    setIsLoading(true)
+
     axios
       .get(`${baseURL}exercises/`)
       .then((response) => {
@@ -51,6 +54,7 @@ const App = () => {
           };
         });
         setExercisesData(newData);
+        setIsLoading(false)
       })
       .catch((error) => {});
   };
@@ -155,6 +159,7 @@ const App = () => {
             path="exercises"
             element={
               <ExercisesList
+                isLoading={isLoading}
                 exercisesData={exercisesData}
                 getAllExercises={getAllExercises}
               />
@@ -182,16 +187,16 @@ const App = () => {
             element={
               <History
                 email={email}
-                baseURL={baseURL}
+                // baseURL={baseURL}
                 exerciseMap={exerciseMap}
                 currentForm={currentForm}
-                setCurrentForm={setCurrentForm}
+                // setCurrentForm={setCurrentForm}
                 currentUser={currentUser}
                 setCurrentUser={setCurrentUser}
                 userData={userData}
                 setUserData={setUserData}
-                exerciseData={exerciseData}
-                setExerciseData={setExerciseData}
+                // exerciseData={exerciseData}
+                // setExerciseData={setExerciseData}
                 handleShow={handleShow}
               />
             }

@@ -3,7 +3,7 @@ import "../style/ExercisesList.css"
 import { Link } from "react-router-dom";
 
 
-const ExercisesList = ( {exercisesData, getAllExercises}) => {
+const ExercisesList = ( {exercisesData, getAllExercises, isLoading}) => {
 
   useEffect(()=>getAllExercises(),[])
   const displayExercises = () => {
@@ -14,7 +14,9 @@ const ExercisesList = ( {exercisesData, getAllExercises}) => {
   }
   return <>
   <div>
+    
     <div id="title"> <div className="glow"> Click on Exercise for Instructions</div></div>
+    {isLoading && <h1 id="loading" > Loading… </h1>}
 
   <div id="container">
   <div id="exercises-container">{displayExercises()} </div>
