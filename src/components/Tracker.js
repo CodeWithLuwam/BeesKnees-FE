@@ -64,10 +64,11 @@ const Tracker = ({
         <td>
           <button
             type="button"
-            onClick={() => {
-              // setNewEntry({ ...newEntry, exercise: exerciseData.id });
-              submitEntry(null, exerciseData.id);
-            }}
+            onClick={
+              !currentUser.name ? handleShow : () => submitEntry(null, exerciseData.id)}
+              
+            
+
           >
             Submit
           </button>
