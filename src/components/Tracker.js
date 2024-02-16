@@ -22,13 +22,17 @@ const Tracker = ({
     exercise: "",
   });
 
-  // to populate exercises "movements" to table on tracker
+// Calls prop to fetch all exercises when the component mounts and updates exercisesData state
   useEffect(() => getAllExercises(), []);
 
+// Maps over exerciseData to generate table rows for each exercise
   const exerciseInfo = () => {
+    
     return exercisesData.map((exerciseData, index) => (
       <tr key={exerciseData.id}>
+        {/* Display an exercise name in each table row */}  
         <td>{exerciseData.name}</td>
+        {/* Input fields for date */}
         <td className="input-text">
           <input
             type="text"
@@ -43,6 +47,7 @@ const Tracker = ({
             onClick={!currentUser.name ? handleShow : null}
           ></input>
         </td>
+        {/* Input fields for sets */}
         <td className="input-text">
           <input
             type="text"
@@ -52,6 +57,7 @@ const Tracker = ({
             onClick={!currentUser.name ? handleShow : null}
           ></input>
         </td>
+        {/* Input fields for reps or minutes */}
         <td className="input-text">
           <input
             type="text"
@@ -61,14 +67,12 @@ const Tracker = ({
             onClick={!currentUser.name ? handleShow : null}
           ></input>
         </td>
+        {/* Submit button for the entry */}
         <td>
           <button
             type="button"
             onClick={
               !currentUser.name ? handleShow : () => submitEntry(null, exerciseData.id)}
-              
-            
-
           >
             Submit
           </button>
@@ -77,7 +81,7 @@ const Tracker = ({
       </tr>
     ));
   };
-  // posting to the database
+  // Post a new entry to the server for storage in the database
   const postEntry = (newEntry) => {
     console.log(currentUser, newEntry)
     try {
@@ -94,11 +98,12 @@ const Tracker = ({
     }
   };
 
-//  the function thats triggered by the submit button and calls the function with the axios call 
+// Function that is triggered by the submit button  
   const submitEntry = (event, exercise_id) => {
-    // // event.preventDefault();
-    postEntry(newEntry); // axios call
-    getUserEntries(); //is a prop to updates userEntry & history is using userEntry
+    postEntry(newEntry); 
+    // Fetches updated user entries from server and updates state
+    getUserEntries(); 
+    // Resets state to prepare for new entry
     setNewEntry({
       date: "",
       sets: "",
@@ -106,20 +111,24 @@ const Tracker = ({
       user: currentUser.id,
       exercise: "",
     });
+    // Visually resets form for the user using DOM manipulation
     const form = document.getElementById("form")
     form.reset()
-
+  // Updates state to include the ID of the exercise that was submitted for tracking user progress
     setSubmittedExercises((prevSubmittedExercises) => [
       ...prevSubmittedExercises,
       exercise_id,
     ]);
   };
 
-  return ( // the beauty part
+  // Defines layout of the component and allows user to input exercise data
+  return (
     <div id="tracker-container">
       <form id="form">
+        {/* Renders a table with React Bootstrap */}
       <Table striped bordered hover variant="light" className="traker-table">
         <thead>
+          {/* Defines column headers */}
           <tr>
             <th>Movement</th>
             <th>Date</th>
@@ -129,7 +138,10 @@ const Tracker = ({
             <th></th>
           </tr>
         </thead>
-        <tbody>{exerciseInfo()}</tbody>
+        <tbody>
+          {/* Populates the table body with dynamic exercise names and input fields */}
+          {exerciseInfo()}
+        </tbody>
       </Table>
       </form>
     </div>
