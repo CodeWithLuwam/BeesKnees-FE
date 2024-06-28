@@ -12,18 +12,22 @@ const ExercisesList = ( {exercisesData, getAllExercises, isLoading}) => {
     {exercise.name} </Link>
     ))
   }
-  return <>
-  <div>
-    
-    <div id="title"> <div className="glow"> Click on Exercise for Instructions</div></div>
-    {isLoading && <h1 id="loading" > Loading… </h1>}
-
-  <div id="container">
-  <div id="exercises-container">{displayExercises()} </div>
-  
-  </div>
-  </div>
-  </>;
+  return (
+    <>
+      <div>
+        <div id="title"> <div className="glow"> Click on Exercise for Instructions</div></div>
+        {isLoading && (
+          <div class="spinner-container">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading</div>
+          </div>
+        )}
+        <div id="container">
+          <div id="exercises-container">{displayExercises()}</div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default ExercisesList;
