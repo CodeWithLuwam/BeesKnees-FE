@@ -16,7 +16,7 @@ const Home = ({
       <h1 id="beesknees"> Bee's Knees</h1>
 
       <div id="center-info">
-        <div id="line1">Knee Rehibilitation </div>
+        <div id="line1">Knee Rehabilitation </div>
         <div id="line2"> Improve Strength</div>
         <div id="line3">Improve Athleticism</div>
         <div id="bottom-info">
